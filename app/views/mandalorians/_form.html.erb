@@ -1,0 +1,26 @@
+<%= form_for @mandalorian do |f| %>
+    <% if @mandalorian.errors.any? %>
+        <div id="error_explanation">
+            <h2>
+                <%= pluralize(@mandalorian.errors.count, 'error') %> 
+                prohibited this Mandalorian from being saved:
+            </h2>
+            <ul>
+                <% @mandalorian.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                <% end %>
+            </ul>
+        </div>
+    <% end %>
+
+    <%= f.label "Name:"%>
+    <%= f.text_field :name %><br>
+
+    <%= f.label "Spaceship:" %>
+    <%= f.text_field :spaceship %><br>
+
+    <%= f.label "Companion:" %>
+    <%= f.text_field :companion %><br>
+
+    <%= f.submit %>
+<% end %>

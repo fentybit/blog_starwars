@@ -1,0 +1,10 @@
+<p>Name: <%= @mandalorian.name %></p>
+<p>Spaceship: <%= @mandalorian.companion %></p>
+<p>Companion: <%= @mandalorian.spaceship %></p>
+<p>Armors:</p>
+<%= @mandalorian.armors.each do |armor| %>
+    <%= armor.name %><br>
+    <%= armor.description %><br>
+<% end %>
+
+<%= button_to 'Delete', @mandalorian, method: :delete %>
